@@ -1,4 +1,3 @@
-webaudio-mario
-==============
+# WebAudio Mario Theme
 
-WebAudio Mario Bros. theme tune.
+This uses HTML5 WebAudio API (without use of music files) to create the Mario theme tune
