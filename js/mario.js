@@ -1,6 +1,7 @@
 window.addEventListener('load', function(){
 	// Mario
-	var audio = new window.webkitAudioContext(),
+	var AudioContext = window.AudioContext || window.webkitAudioContext,
+		audio = new AudioContext(),
 		position = 0,	
 		noteFrequencies = { 'C4':261.6, 'C#4':277.2, 'D4':293.7, 'D#4':311.1, 'E4':329.6, 'F4':349.2, 'F#4':370, 'G4':392, 'G#4':415.3, 'A5':440, 'A#5':466.2, 'B5':493.9, 'C5':523.3, 'C#5':554.4, 'D5':587.3, 'D#5':622.3, 'E5':659.3, 'F5':698.5, 'F#5':740, 'G5':784, 'G#5':830.6, 'A6':880, 'A#6':932.3, 'B6':987.8, 'C6':1046.5 },
 		song = [
@@ -71,6 +72,7 @@ window.addEventListener('load', function(){
 
 		if (notes !== '-') {
 			notes = notes.split(',');
+			l = notes.length;
 			for (; i < l; i++) {
 				var freq = noteFrequencies[notes[i]];
 				createOscillator(freq);
